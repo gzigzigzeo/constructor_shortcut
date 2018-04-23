@@ -1,8 +1,9 @@
 require "constructor_shortcut/version"
 
-# Generates
+# Generates anonymous module containing single class method
 module ConstructorShortcut
-  def self.[](name)
+  # Used to set method name
+  def self.[](name = :call)
     @cache ||= {}
     @cache[name] ||=
       Module.new do
