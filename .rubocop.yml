@@ -1,0 +1,22 @@
+---
+AllCops:
+  Include:
+    - ./Gemfile
+  Exclude:
+    - bin/*
+  TargetRubyVersion: 2.5
+
+Metrics/LineLength:
+  Max: 120
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Naming/FileName:
+  Exclude:
+    - "*.*"
+    - "Rakefile"
+    - "Gemfile"
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
