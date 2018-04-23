@@ -5,7 +5,7 @@ Syntax sugar gem used to generate class-level alias for the constructor.
 Before:
 
 ```ruby
-class CallableClass
+class CallableServiceObject
   extend Dry::Initializer
 
   param :foo
@@ -14,6 +14,7 @@ class CallableClass
     foo * 2
   end
 
+  # Needs to be repeated in every service object or exist in base class of all hierarchies
   class << self
     def call(*args)
       new(*args).call
@@ -25,7 +26,7 @@ end
 After:
 
 ```ruby
-class CallableClass
+class CallableServiceObject
   extend Dry::Initializer
   extend ConstructorShortcut[:call]
 
