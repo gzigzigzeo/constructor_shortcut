@@ -8,9 +8,11 @@ module ConstructorShortcut
     @cache ||= {}
     @cache[name] ||=
       Module.new do
+        @key = name.inspect
+
         class << self
           def name
-            "ConstructorShortcut[#{key}]"
+            "ConstructorShortcut[#{@key}]"
           end
           alias_method :to_s, :name
           alias_method :to_str, :name

@@ -1,17 +1,5 @@
 require "bundler/setup"
-require "dry/initializer"
 require "constructor_shortcut"
-
-class TestConstructorShortcut
-  extend Dry::Initializer
-  extend ConstructorShortcut[:call]
-
-  param :foo
-
-  def call
-    foo
-  end
-end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
