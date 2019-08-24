@@ -24,6 +24,8 @@ class CallableServiceObject
     end
   end
 end
+
+CallableServiceObject.new(1).call
 ```
 
 After:
@@ -39,6 +41,25 @@ class CallableServiceObject
     foo * 2
   end
 end
+
+CallableServiceObject.call(1)
+```
+
+Additionally:
+
+```ruby
+class CallableServiceObject
+  extend Dry::Initializer
+  extend ConstructorShortcut[:call, :[]]
+
+  param :foo
+
+  def call
+    foo * 2
+  end
+end
+
+CallableServiceObject[1]
 ```
 
 ## Installation

@@ -4,7 +4,7 @@ RSpec.describe ConstructorShortcut do
   let(:klass) do
     Class.new do
       extend Dry::Initializer
-      extend ConstructorShortcut[:call]
+      extend ConstructorShortcut[:call, :[]]
 
       param :foo
 
@@ -15,12 +15,12 @@ RSpec.describe ConstructorShortcut do
   end
 
   it "creates shortcut" do
-    expect(klass.call(5)).to eq(5)
+    expect(klass[5]).to eq(5)
   end
 
   it "shows proper ancestors for singleton class" do
     expect(klass.singleton_class.ancestors).to include(
-      ConstructorShortcut[:call]
+      ConstructorShortcut[:call, :[]]
     )
   end
 end

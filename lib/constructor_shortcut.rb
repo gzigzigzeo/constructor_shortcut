@@ -4,7 +4,7 @@ require "constructor_shortcut/version"
 module ConstructorShortcut
   # Used to set method name
   # rubocop:disable Metrics/MethodLength
-  def self.[](name = :call)
+  def self.[](name = :call, class_name = :call)
     @cache ||= {}
     @cache[name] ||=
       Module.new do
@@ -19,7 +19,7 @@ module ConstructorShortcut
           alias_method :inspect, :name
         end
 
-        define_method name do |*args, &block|
+        define_method class_name do |*args, &block|
           new(*args, &block).public_send(name)
         end
       end
