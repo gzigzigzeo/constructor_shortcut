@@ -1,5 +1,5 @@
-[![Gem Version](https://badge.fury.io/rb/mobius-client.svg)](https://badge.fury.io/rb/constructor_shortcut)
-[![Build Status](https://travis-ci.org/mobius-network/mobius-client-ruby.svg?branch=master)](https://travis-ci.org/gzigzigzeo/constructor_shortcut)
+[![Gem Version](https://badge.fury.io/rb/constructor_shortcut.svg)](https://badge.fury.io/rb/constructor_shortcut)
+[![Build Status](https://travis-ci.org/mobius-network/constructor_shortcut.svg?branch=master)](https://travis-ci.org/gzigzigzeo/constructor_shortcut)
 
 # ConstructorShortcut
 
