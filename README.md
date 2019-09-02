@@ -33,7 +33,8 @@ After:
 ```ruby
 class CallableServiceObject
   extend Dry::Initializer
-  extend ConstructorShortcut[:call]
+  # Similar to `extend ConstructorShortcut[:call, :call]`
+  extend ConstructorShortcut
 
   param :foo
 
