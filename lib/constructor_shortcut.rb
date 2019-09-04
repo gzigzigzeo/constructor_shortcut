@@ -1,5 +1,4 @@
 require "constructor_shortcut/version"
-require "constructor_shortcut/cache"
 
 # rubocop:disable Metrics/MethodLength
 
